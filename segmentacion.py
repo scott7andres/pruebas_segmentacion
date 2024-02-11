@@ -32,9 +32,9 @@ os.chdir(directorio_resultados)
 comandos = [
     f"nmap -sS -n {ip_rango} -oN general",
     f"nmap -sS -T4 -f -Pn {ip_objetivo} -oN fragmentacion",
-    f'echo "Comando ejecutado: sudo hping3 -c 1 -S {ip_objetivo} -a {ip_c}" >> hping; nohup hping3 -c 1 -S 192.168.0.10 -a 192.168.1.11 >> hping 2>&1 &',
-    f'echo "Comando ejecutado: sudo hping3 -c 1 --icmp -S {ip_objetivo} -a {ip_c}" >> hping_icmp; nohup hping3 -c 1 --icmp -S 192.168.0.10 -a 192.168.1.11 >> hping_icmp 2>&1 &',
-    f'echo "Comando ejecutado: sudo hping3 -c 1 --udp -S {ip_objetivo} -a {ip_c}" >> hping_udp; nohup hping3 -c 1 --udp -S 192.168.0.10 -a 192.168.1.11 >> hping_udp 2>&1 &',
+    f'echo "Comando ejecutado: sudo hping3 -c 1 -S {ip_c} -a {ip_objetivo}" >> hping; nohup hping3 -c 1 -S 192.168.0.10 -a 192.168.1.11 >> hping 2>&1 &',
+    f'echo "Comando ejecutado: sudo hping3 -c 1 --icmp -S {ip_c} -a {ip_objetivo}" >> hping_icmp; nohup hping3 -c 1 --icmp -S 192.168.0.10 -a 192.168.1.11 >> hping_icmp 2>&1 &',
+    f'echo "Comando ejecutado: sudo hping3 -c 1 --udp -S {ip_c} -a {ip_objetivo}" >> hping_udp; nohup hping3 -c 1 --udp -S 192.168.0.10 -a 192.168.1.11 >> hping_udp 2>&1 &',
     f"nmap -sS -T4 -n -Pn -D {ip_a},{ip_b},ME,{ip_c} {ip_objetivo} -oN decoy"
 ]
 
